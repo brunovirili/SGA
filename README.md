@@ -47,7 +47,8 @@ Próximamente:
 
 ## Estado del proyecto
 
-🚧 En desarrollo.
+- Versión:
+Clase 02
 
 
 ## Autor
