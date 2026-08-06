@@ -45,7 +45,7 @@ async function iniciar(){
 }
 iniciar(); */
 //crear obtenerDocentes()
-const docentes = [
+/* const docentes = [
     {
         id: 1,
         nombre: "profesor"
@@ -66,5 +66,25 @@ async function iniciar(){
     const datos = await obtenerDocentes()
     console.table(datos)
 }
-iniciar();
+iniciar(); */
 //mostrar los datos a traves de async o await
+
+async function obtenerAlumnos(){
+    const respuesta =  await fetch ("https://jsonplaceholder.typicode.com/users")
+    const alumnos = await respuesta.json()
+    return alumnos
+}
+
+function mostrarAlumnos(alumnos){
+    /* console.table(alumnos)
+    console.log(alumnos[0].id) */
+    for (const alumno of alumnos){
+        console.log(alumno.name, alumno.email)
+    }
+}
+
+async function iniciar(){
+    const alumnos = await obtenerAlumnos()
+    mostrarAlumnos(alumnos)
+}
+iniciar()
