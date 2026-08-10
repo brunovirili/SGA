@@ -76,11 +76,22 @@ async function obtenerAlumnos(){
 }
 
 function mostrarAlumnos(alumnos){
-    /* console.table(alumnos)
-    console.log(alumnos[0].id) */
-    for (const alumno of alumnos){
-        console.log(alumno.name, alumno.email)
-    }
+    //console.table(alumnos)
+    console.log(typeof alumnos)
+    localStorage.setItem("alumnos", JSON.stringify(alumnos))
+    const datos = localStorage.getItem("alumnos")
+    console.log(typeof datos)
+    //console.log(datos)
+    const alr = JSON.parse(datos)
+    console.log(typeof alr)
+    console.table(alr)
+
+
+       /*  console.table(alumnos)
+        console.log(alumnos[0].id) 
+        for (const alumno of alumnos){
+            console.log(alumno.name, alumno.email)
+        }  */
 }
 
 async function iniciar(){
