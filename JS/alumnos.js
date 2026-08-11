@@ -69,13 +69,13 @@ async function iniciar(){
 iniciar(); */
 //mostrar los datos a traves de async o await
 
-async function obtenerAlumnos(){
+/* async function obtenerAlumnos(){
     const respuesta =  await fetch ("https://jsonplaceholder.typicode.com/users")
     const alumnos = await respuesta.json()
     return alumnos
-}
+} */
 
-function mostrarAlumnos(alumnos){
+/* function mostrarAlumnos(alumnos){
     //console.table(alumnos)
     console.log(typeof alumnos)
     localStorage.setItem("alumnos", JSON.stringify(alumnos))
@@ -84,18 +84,67 @@ function mostrarAlumnos(alumnos){
     //console.log(datos)
     const alr = JSON.parse(datos)
     console.log(typeof alr)
-    console.table(alr)
+    console.table(alr) */
 
 
        /*  console.table(alumnos)
         console.log(alumnos[0].id) 
         for (const alumno of alumnos){
             console.log(alumno.name, alumno.email)
-        }  */
-}
+        } 
+} */
 
-async function iniciar(){
+/* async function iniciar(){
     const alumnos = await obtenerAlumnos()
     mostrarAlumnos(alumnos)
 }
-iniciar()
+iniciar() */
+
+const formulario = document.querySelector("#formAlumno")
+
+    formulario.addEventListener("submit", function(event){
+    event.preventDefault();
+
+const nombre = document.querySelector("#nombre").value
+const carrera = document.querySelector("#carrera").value
+const correo = document.querySelector("#correo").value
+
+const alumno = {
+    id: Date.now(),
+    nombre: nombre,
+    carrera: carrera,
+    correo: correo
+}
+
+const alumnos = obtenerAlumnos()
+
+alumnos.push(alumno)
+
+localStorage.setItem("alumnos", JSON.stringify(alumnos))
+
+mostrarAlumnos(alumnos)
+
+formulario.reset();
+});
+
+function obtenerAlumnos() {
+    const datos = localStorage.getItem("alumnos")
+    if (datos){
+        return JSON.parse(datos)
+    }
+    return []
+}
+
+const listaAlumnos = document.querySelector("#listaAlumnos")
+
+function mostrarAlumnos(alumnos) {
+    listaAlumnos.innerHTML = ""
+    for (const alumno of alumnos) {
+        listaAlumnos.innerHTML += `
+        <li> 
+            ${alumno.nombre} - 
+            ${alumno.carrera} - 
+            ${alumno.correo} 
+        </li>`;
+    }
+}
