@@ -48,7 +48,7 @@ Próximamente:
 ## Estado del proyecto
 
 - Versión:
-Clase 02
+Clase 08
 
 
 ## Autor
