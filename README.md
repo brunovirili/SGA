@@ -30,11 +30,11 @@ Actualmente:
 
 - HTML5
 
-Próximamente:
-
 - CSS3
 
 - JavaScript
+
+Próximamente:
 
 - React
 
@@ -48,8 +48,7 @@ Próximamente:
 ## Estado del proyecto
 
 - Versión:
-Clase 08
-
+Clase 10- - Estructura actual
 
 ## Autor
 Bruno Virili
