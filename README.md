@@ -48,7 +48,7 @@ Próximamente:
 ## Estado del proyecto
 
 - Versión:
-Clase 10- - Estructura actual
+Clase 10 - Estructura actual
 
 ## Autor
 Bruno Virili
