@@ -2,7 +2,7 @@ GET http://localhost:3000/alumnos
 
 ###
 
-GET http://localhost:3000/alumnos
+GET http://localhost:3000/alumnos/2
 
 ###
 POST http://localhost:3000/alumnos
@@ -16,11 +16,15 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:3000/alumnos/3
+PUT http://localhost:3000/alumnos/4
 Content-Type: application/json
 
 {
-    "id": "4",
+    "id": "5",
     "nombre": "Lucas",
     "carrera": "Sistemas"
 }
+
+###
+
+DELETE http://localhost:3000/alumnos/3
