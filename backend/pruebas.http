@@ -2,7 +2,7 @@ GET http://localhost:3000/alumnos
 
 ###
 
-GET http://localhost:3000/alumnos/2
+GET http://localhost:3000/alumnos/1005
 
 ###
 POST http://localhost:3000/alumnos
