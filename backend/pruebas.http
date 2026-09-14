@@ -20,7 +20,10 @@ POST http://localhost:3000/alumnos
 Content-Type: application/json
 
 {
-
+    "legajo": 1006,
+    "nombre": "Adriel",
+    "carrera": "Sistemas",
+    "correo": "adri@mail.com"
 }
 
 ###
@@ -36,4 +39,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/alumnos/78
+DELETE http://localhost:3000/alumnos/1021
