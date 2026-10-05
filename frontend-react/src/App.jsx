@@ -1,9 +1,13 @@
 /* import Titulo from "./components/Titulo"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
-import TarjetaAlumno from "./components/TarjetaAlumnos" */
+import TarjetaAlumno from "./components/TarjetaAlumnos"
 import Incrementar from "./components/ejemplos/Incrementar"
 import CambiarTitulo from "./components/ejemplos/CambiarTitulo"
+import Adivina from "./components/ejemplos/Adivina" */
+
+import Mensaje from "./components/ejemplos/Mensaje"
+import Tamano from "./components/ejemplos/TamanoTexto"
 import Adivina from "./components/ejemplos/Adivina"
 
 function App() 
@@ -15,10 +19,13 @@ function App()
     <h2>Administración de alumnos</h2>
     <TarjetaAlumno nombre="Bruno Virili" carrera="Programación" correo ="bruno@mail.com"/>
     <TarjetaAlumno nombre="Bruno Virili" carrera="Programación" correo ="bruno@mail.com"/> */}
-    <Incrementar />
+    {/* <Incrementar />
     <CambiarTitulo />
-    <Adivina />
+    <Adivina /> }
     {/* <Footer /> */}
+    <Tamano />
+    <Mensaje />
+    <Adivina />
     </>
   )
 }

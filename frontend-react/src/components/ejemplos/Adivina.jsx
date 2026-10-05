@@ -1,8 +1,12 @@
 import { useState } from "react";
+let partidasGanadas = 0
+let partidasPerdidas = 0
+let partidasJugadas = 0
 
 export function Adivina(){
     const [seleccion, setSeleccion] = useState("")
     const [resultado, setResultado] = useState("")
+    
 
     function sortear(){
         const ganador = Math.floor(Math.random() * 10) + 1
@@ -17,9 +21,14 @@ export function Adivina(){
         }
         if (elegido === ganador){
             setResultado("Felicidades, has elegido el número ganador")
+            partidasGanadas += 1
+            document.getElementById("1").style.color = "green";
         } else {
             setResultado(`Fallaste. El número era: ${ganador}.`)
+            partidasPerdidas += 1
+            document.getElementById("1").style.color = "red";
         }
+        partidasJugadas += 1
     }
     return (
         <>
@@ -28,7 +37,10 @@ export function Adivina(){
         <input type="number" value={seleccion} onChange={(e) => setSeleccion(e.target.value)} style={{width:"90px", height:"30px", fontSize:"15px"}}/>
         <button onClick={sortear} style={{width:"90px", height:"36px", fontSize:"15px"}}>Adivinar</button>
         </div>
-        <p>{resultado}</p>
+        <p id="1">{resultado}</p>
+        <p>Partidas ganadas: {partidasGanadas}</p>
+        <p>Partidas perdidas: {partidasPerdidas}</p>
+        <p>Partidas Jugadas: {partidasJugadas}</p>
         </>
     )
 }
