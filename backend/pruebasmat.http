@@ -1,0 +1,212 @@
+###
+# Obtener todas las materias
+GET http://localhost:3000/materias
+
+###
+# Registrar materia PRG1
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "PRG1",
+    "nombre": "Programación I",
+    "descripcion": "Fundamentos de programación",
+    "cargaHoraria": 96,
+    "estado": "activa"
+}
+
+###
+# Registrar materia PRG3
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "PRG3",
+    "nombre": "Programación III",
+    "descripcion": "Estructuras de datos",
+    "cargaHoraria": 80,
+    "estado": "activa"
+}
+
+###
+# Registrar materia BD1 (sin descripción)
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "BD1",
+    "nombre": "Bases de Datos I",
+    "cargaHoraria": 64,
+    "estado": "inactiva"
+}
+
+###
+# Obtener todas las materias (ahora con datos)
+GET http://localhost:3000/materias
+
+###
+# Obtener una materia por su código
+GET http://localhost:3000/materias/PRG1
+
+###
+# Obtener una materia que no existe
+GET http://localhost:3000/materias/XXX
+
+###
+# Alta sin código
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "nombre": "Sin código",
+    "cargaHoraria": 40,
+    "estado": "activa"
+}
+
+###
+# Alta sin nombre
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "SN1",
+    "cargaHoraria": 40,
+    "estado": "activa"
+}
+
+###
+# Alta sin carga horaria
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "SC1",
+    "nombre": "Sin carga horaria",
+    "estado": "activa"
+}
+
+###
+# Alta con carga horaria igual a cero
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "CH0",
+    "nombre": "Carga cero",
+    "cargaHoraria": 0,
+    "estado": "activa"
+}
+
+###
+# Alta con carga horaria negativa
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "CHN",
+    "nombre": "Carga negativa",
+    "cargaHoraria": -5,
+    "estado": "activa"
+}
+
+###
+# Alta con carga horaria decimal
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "CHD",
+    "nombre": "Carga decimal",
+    "cargaHoraria": 2.5,
+    "estado": "activa"
+}
+
+###
+# Alta con código duplicado
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "PRG1",
+    "nombre": "Otra materia",
+    "cargaHoraria": 50,
+    "estado": "activa"
+}
+
+###
+# Alta con estado no permitido
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "EST1",
+    "nombre": "Estado inválido",
+    "cargaHoraria": 50,
+    "estado": "pendiente"
+}
+
+###
+# Modificar nombre y descripción de PRG1
+PUT http://localhost:3000/materias/PRG1
+Content-Type: application/json
+
+{
+    "codigo": "PRG1",
+    "nombre": "Programación Uno",
+    "descripcion": "Descripción modificada",
+    "cargaHoraria": 96,
+    "estado": "activa"
+}
+
+###
+# Modificar carga horaria y estado de PRG1
+PUT http://localhost:3000/materias/PRG1
+Content-Type: application/json
+
+{
+    "codigo": "PRG1",
+    "nombre": "Programación Uno",
+    "descripcion": "Descripción modificada",
+    "cargaHoraria": 120,
+    "estado": "inactiva"
+}
+
+###
+# Modificar una materia que no existe
+PUT http://localhost:3000/materias/XXX
+Content-Type: application/json
+
+{
+    "codigo": "XXX",
+    "nombre": "No existe",
+    "cargaHoraria": 40,
+    "estado": "activa"
+}
+
+###
+# Cambiar el código de PRG1 por el de otra materia (PRG3)
+PUT http://localhost:3000/materias/PRG1
+Content-Type: application/json
+
+{
+    "codigo": "PRG3",
+    "nombre": "Programación Uno",
+    "cargaHoraria": 120,
+    "estado": "inactiva"
+}
+
+###
+# Eliminar la materia BD1
+DELETE http://localhost:3000/materias/BD1
+
+###
+# Consultar BD1 después de eliminarla
+GET http://localhost:3000/materias/BD1
+
+###
+# Eliminar una materia que no existe
+DELETE http://localhost:3000/materias/XXX
+
+###
+# Obtener todas las materias (listado final)
+GET http://localhost:3000/materias
