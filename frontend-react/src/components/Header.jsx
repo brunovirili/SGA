@@ -97,6 +97,7 @@ export default function Header() {
                         >
                             Docentes
                         </Link>
+<<<<<<< HEAD
                         <Link
                             component={RouterLink}
                             to="/materias"
@@ -106,6 +107,8 @@ export default function Header() {
                         >
                             Materias
                         </Link>
+=======
+>>>>>>> origin/main
                         <IconButton
                             component={RouterLink}
                             to="/ayuda"
