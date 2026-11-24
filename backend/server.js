@@ -6,10 +6,7 @@ const cors = require("cors")
 const conectarDB = require("./config/database")
 const alumnosRoutes = require("./routes/alumnos.routes") 
 const docentesRoutes = require("./routes/docentes.routes")
-<<<<<<< HEAD
 const materiasRoutes = require("./routes/materias.routes")
-=======
->>>>>>> origin/main
 const authRoutes  = require("./routes/authRoutes")
 
 
@@ -19,13 +16,10 @@ app.use(express.json())
 app.use(cors()) 
 app.use("/alumnos", alumnosRoutes) 
 app.use("/docentes", docentesRoutes)
-<<<<<<< HEAD
 app.use("/materias", materiasRoutes)
-=======
->>>>>>> origin/main
 app.use("/auth", authRoutes)
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT  || 3000
 
 conectarDB() 
 
